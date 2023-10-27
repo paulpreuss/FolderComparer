@@ -9,4 +9,17 @@
 	<PackageReference Include="Microsoft.Extensions.Hosting" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Extensions\" />
+    <None Remove="Views\" />
+    <None Remove="Processors\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+    <Folder Include="Views\" />
+    <Folder Include="Processors\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Preuss.FolderComparer.Abstractions\Preuss.FolderComparer.Abstractions.csproj" />
+  </ItemGroup>
 </Project>
