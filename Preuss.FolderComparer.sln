@@ -3,7 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preuss.FolderComparer", "Preuss.FolderComparer\Preuss.FolderComparer.csproj", "{D3528CCA-0D2F-4C27-B83D-7C352667B1BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Preuss.FolderComparer", "Preuss.FolderComparer\Preuss.FolderComparer.csproj", "{D3528CCA-0D2F-4C27-B83D-7C352667B1BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{3385024B-BAB9-498F-A16D-CD894E280906}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
+		global.json = global.json
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
