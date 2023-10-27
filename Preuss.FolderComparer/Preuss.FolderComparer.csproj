@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
+	<PackageId>Preuss.FolderComparer</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,7 +18,6 @@
   <ItemGroup>
     <Folder Include="Extensions\" />
     <Folder Include="Views\" />
-    <Folder Include="Processors\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Preuss.FolderComparer.Abstractions\Preuss.FolderComparer.Abstractions.csproj" />

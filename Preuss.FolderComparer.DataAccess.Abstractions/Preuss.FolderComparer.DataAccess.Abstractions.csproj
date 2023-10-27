@@ -1,0 +1,7 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<PackageId>Preuss.FolderComparer.DataAccess.Abstractions</PackageId>
+  </PropertyGroup>
+
+</Project>

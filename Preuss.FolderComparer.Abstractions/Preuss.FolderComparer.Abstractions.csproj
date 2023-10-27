@@ -1,8 +1,5 @@
-<Project Sdk="Microsoft.NET.Sdk">
-  <ItemGroup>
-    <None Remove="Processors\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Processors\" />
-  </ItemGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageId>Preuss.FolderComparer.Abstractions</PackageId>
+  </PropertyGroup>
 </Project>
