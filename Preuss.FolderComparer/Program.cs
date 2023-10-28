@@ -12,7 +12,9 @@ var builder = Host.CreateDefaultBuilder()
         services.SetupViews();
     }).Build();
 
-await builder.RunAsync();
+await builder.StartAsync();
 
 var view = builder.Services.GetRequiredService<MainView>();
 view.Print();
+
+await builder.StopAsync();
