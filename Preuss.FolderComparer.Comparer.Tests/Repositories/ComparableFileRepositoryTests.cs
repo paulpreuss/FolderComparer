@@ -27,7 +27,6 @@ public class ComparableFileRepositoryTests
         {
             new ()
             {
-                 Id = string.Empty,
                  Hash = "437B930DB84B8079C2DD804A71936B5F",
                  Path = "C:\\test.txt"
             }
