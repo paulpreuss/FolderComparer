@@ -1,10 +1,10 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
-using Preuss.FolderComparer.DataAccess.Abstractions.DataClasses;
-using Preuss.FolderComparer.DataAccess.Abstractions.Exceptions;
-using Preuss.FolderComparer.DataAccess.Repositories;
+using Preuss.FolderComparer.Comparer.Abstractions.DataClasses;
+using Preuss.FolderComparer.Comparer.Abstractions.Exceptions;
+using Preuss.FolderComparer.Comparer.Repositories;
 
-namespace Preuss.FolderComparer.DataAccess.Tests.Repositories;
+namespace Preuss.FolderComparer.Comparer.Tests.Repositories;
 
 public class ComparableFileRepositoryTests
 {

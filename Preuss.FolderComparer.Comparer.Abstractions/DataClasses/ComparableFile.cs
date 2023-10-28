@@ -1,4 +1,4 @@
-﻿namespace Preuss.FolderComparer.DataAccess.Abstractions.DataClasses;
+﻿namespace Preuss.FolderComparer.Comparer.Abstractions.DataClasses;
 
 public class ComparableFile
 {

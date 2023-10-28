@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <PackageId>Preuss.FolderComparer.DataAccess</PackageId>
+    <PackageId>Preuss.FolderComparer.Comparer</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Preuss.FolderComparer.DataAccess.Abstractions\Preuss.FolderComparer.DataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\Preuss.FolderComparer.Comparer.Abstractions\Preuss.FolderComparer.Comparer.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,7 @@
 ﻿using System.IO.Abstractions;
 using System.IO.Abstractions.TestingHelpers;
 
-namespace Preuss.FolderComparer.DataAccess.Tests;
+namespace Preuss.FolderComparer.Comparer.Tests;
 
 public static class Constants
 {

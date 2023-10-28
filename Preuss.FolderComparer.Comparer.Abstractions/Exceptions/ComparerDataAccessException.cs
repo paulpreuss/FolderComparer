@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Preuss.FolderComparer.DataAccess.Abstractions.Exceptions;
+namespace Preuss.FolderComparer.Comparer.Abstractions.Exceptions;
 
 [Serializable]
 public class ComparerDataAccessException : Exception

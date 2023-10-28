@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Preuss.FolderComparer.DataAccess.Abstractions.Repositories;
-using Preuss.FolderComparer.DataAccess.Repositories;
+using Preuss.FolderComparer.Comparer.Abstractions.Repositories;
+using Preuss.FolderComparer.Comparer.Repositories;
 
-namespace Preuss.FolderComparer.DataAccess.Extensions;
+namespace Preuss.FolderComparer.Comparer.Extensions;
 
 public static class ServiceCollectionExtension
 {

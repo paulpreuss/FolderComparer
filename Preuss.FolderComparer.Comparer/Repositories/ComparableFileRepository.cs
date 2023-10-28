@@ -1,11 +1,11 @@
-﻿using Preuss.FolderComparer.DataAccess.Abstractions.DataClasses;
-using Preuss.FolderComparer.DataAccess.Abstractions.Exceptions;
-using Preuss.FolderComparer.DataAccess.Abstractions.Repositories;
+﻿using Preuss.FolderComparer.Comparer.Abstractions.DataClasses;
+using Preuss.FolderComparer.Comparer.Abstractions.Exceptions;
+using Preuss.FolderComparer.Comparer.Abstractions.Repositories;
 using System.IO.Abstractions;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Preuss.FolderComparer.DataAccess.Repositories;
+namespace Preuss.FolderComparer.Comparer.Repositories;
 
 public class ComparableFileRepository : IComparableFileRepository
 {
