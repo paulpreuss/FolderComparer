@@ -1,4 +1,5 @@
 ﻿using Preuss.FolderComparer.DataAccess.Abstractions.DataClasses;
+using Preuss.FolderComparer.DataAccess.Abstractions.Exceptions;
 using Preuss.FolderComparer.DataAccess.Abstractions.Repositories;
 using System.IO.Abstractions;
 using System.Security.Cryptography;
@@ -17,22 +18,37 @@ public class ComparableFileRepository : IComparableFileRepository
 
     public IEnumerable<ComparableFile> GetFiles(string path)
     {
-        var files = new List<ComparableFile>();
-
-        var filesInCurrentDirectory = _fileSystem.Directory.GetFiles(path);
-        files.AddRange(GetComparableFiles(filesInCurrentDirectory));
-
-        var directoriesInCurrentDirectory = _fileSystem.Directory.GetDirectories(path);
-        if (directoriesInCurrentDirectory is not null 
-            && directoriesInCurrentDirectory.Any())
+        try
         {
-            foreach (var directory in directoriesInCurrentDirectory)
-            {
-                files.AddRange(GetFiles(directory));
-            }
-        }
+            var files = new List<ComparableFile>();
 
-        return files;
+            var filesInCurrentDirectory = _fileSystem.Directory.GetFiles(path);
+            files.AddRange(GetComparableFiles(filesInCurrentDirectory));
+
+            var directoriesInCurrentDirectory = _fileSystem.Directory.GetDirectories(path);
+            if (directoriesInCurrentDirectory is not null
+                && directoriesInCurrentDirectory.Any())
+            {
+                foreach (var directory in directoriesInCurrentDirectory)
+                {
+                    files.AddRange(GetFiles(directory));
+                }
+            }
+
+            return files;
+        }
+        catch (IOException ex)
+        {
+            throw new ComparerDataAccessException($"Could read files of {path}. Probably it is a file path. Please enter a valid folder path.", ex);
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            throw new UnauthorizedAccessException($"Access to {path} denied.", ex);
+        }
+        catch (ArgumentException ex)
+        {
+            throw new ArgumentException($"{path} is not a valid path.", ex);
+        }
     }
 
     private IEnumerable<ComparableFile> GetComparableFiles(string[]? paths)

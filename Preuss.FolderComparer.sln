@@ -16,9 +16,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{3385024B-B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Preuss.FolderComparer.Abstractions", "Preuss.FolderComparer.Abstractions\Preuss.FolderComparer.Abstractions.csproj", "{68579DCB-309C-4A6A-B6DC-39831DC60A7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preuss.FolderComparer.DataAccess", "Preuss.FolderComparer.DataAccess\Preuss.FolderComparer.DataAccess.csproj", "{2CAA008D-0948-4C7E-98F4-8C9EEDBAD50A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Preuss.FolderComparer.DataAccess", "Preuss.FolderComparer.DataAccess\Preuss.FolderComparer.DataAccess.csproj", "{2CAA008D-0948-4C7E-98F4-8C9EEDBAD50A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preuss.FolderComparer.DataAccess.Abstractions", "Preuss.FolderComparer.DataAccess.Abstractions\Preuss.FolderComparer.DataAccess.Abstractions.csproj", "{7570EA4D-8FCF-47F1-94D4-F53FC7978BD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Preuss.FolderComparer.DataAccess.Abstractions", "Preuss.FolderComparer.DataAccess.Abstractions\Preuss.FolderComparer.DataAccess.Abstractions.csproj", "{7570EA4D-8FCF-47F1-94D4-F53FC7978BD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preuss.FolderComparer.DataAccess.Tests", "Preuss.FolderComparer.DataAccess.Tests\Preuss.FolderComparer.DataAccess.Tests.csproj", "{0B2217EA-2036-4241-9DA7-3A8DFA03ECB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +44,10 @@ Global
 		{7570EA4D-8FCF-47F1-94D4-F53FC7978BD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7570EA4D-8FCF-47F1-94D4-F53FC7978BD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7570EA4D-8FCF-47F1-94D4-F53FC7978BD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B2217EA-2036-4241-9DA7-3A8DFA03ECB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B2217EA-2036-4241-9DA7-3A8DFA03ECB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B2217EA-2036-4241-9DA7-3A8DFA03ECB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B2217EA-2036-4241-9DA7-3A8DFA03ECB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
