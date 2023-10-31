@@ -11,4 +11,7 @@
   <ItemGroup>
     <PackageReference Include="CommandLineParser" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Preuss.FolderComparer.Comparer.Abstractions\Preuss.FolderComparer.Comparer.Abstractions.csproj" />
+  </ItemGroup>
 </Project>
