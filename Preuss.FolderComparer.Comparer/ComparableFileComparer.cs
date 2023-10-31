@@ -14,33 +14,33 @@ public class ComparableFileComparer : IComparableFileComparer
         _repository = repository;
     }
 
-    public IEnumerable<ComparedFileResult> GetComparedFileResults(string folderOne, string folderTwo)
+    public IEnumerable<ComparedFileResult> GetComparedFileResults(string source, string analogy)
     {
-        var filesFromFolderOne = _repository.GetFiles(folderOne);
-        var filesFromFolderTwo = _repository.GetFiles(folderTwo);
+        var filesFromSource = _repository.GetFiles(source);
+        var filesFromAnalogy = _repository.GetFiles(analogy);
 
         var results = new List<ComparedFileResult>();
 
-        foreach (var fileOne in filesFromFolderOne)
+        foreach (var file in filesFromSource)
         {
-            if (filesFromFolderTwo.Any(x => x.Hash == fileOne.Hash)) continue;
+            if (filesFromAnalogy.Any(x => x.Hash == file.Hash)) continue;
 
             results.Add(new ComparedFileResult
             {
-                Path = fileOne.Path,
-                Source = folderOne,
+                Path = file.Path,
+                Source = source,
                 Result = CompareResult.Missing
             });
         }
 
-        foreach (var fileTwo in filesFromFolderTwo)
+        foreach (var file in filesFromAnalogy)
         {
-            if (filesFromFolderOne.Any(x => x.Hash == fileTwo.Hash)) continue;
+            if (filesFromSource.Any(x => x.Hash == file.Hash)) continue;
 
             results.Add(new ComparedFileResult
             {
-                Path = fileTwo.Path,
-                Source = folderTwo,
+                Path = file.Path,
+                Source = analogy,
                 Result = CompareResult.Missing
             });
         }

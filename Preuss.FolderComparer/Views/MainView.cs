@@ -63,14 +63,14 @@ public class MainView
         Compare(source, analogy);
     }
 
-	private void Compare(string firstFolder, string secondFolder)
+	private void Compare(string source, string analogy)
 	{
-        if (_fileSystem.Directory.Exists(firstFolder)
-            && _fileSystem.Directory.Exists(secondFolder))
+        if (_fileSystem.Directory.Exists(source)
+            && _fileSystem.Directory.Exists(analogy))
         {
-            var results = _comparer.GetComparedFileResults(firstFolder, secondFolder);
+            var results = _comparer.GetComparedFileResults(source, analogy);
 
-            _resultView.Print(results);
+            _resultView.Print(source, analogy, results);
         }
     }
 }

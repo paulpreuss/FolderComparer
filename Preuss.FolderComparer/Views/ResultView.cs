@@ -4,7 +4,7 @@ namespace Preuss.FolderComparer.Views;
 
 public class ResultView
 {
-	public void Print(IEnumerable<ComparedFileResult> results)
+	public void Print(string source, string analogy, IEnumerable<ComparedFileResult> results)
 	{
 		if (!results.Any())
 		{
