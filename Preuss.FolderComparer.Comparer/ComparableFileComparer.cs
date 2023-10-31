@@ -19,14 +19,8 @@ public class ComparableFileComparer : IComparableFileComparer
         var filesFromFolderOne = _repository.GetFiles(folderOne);
         var filesFromFolderTwo = _repository.GetFiles(folderTwo);
 
-        var results = CompareFiles(filesFromFolderOne, filesFromFolderTwo);
+        var results = new List<ComparedFileResult>();
 
-        return results;
-    }
-
-    private IEnumerable<ComparedFileResult> CompareFiles(IEnumerable<ComparableFile> filesFromFolderOne,
-        IEnumerable<ComparableFile> filesFromFolderTwo)
-    {
         var missingInFolderTwo = new List<ComparedFileResult>();
 
         foreach (var fileOne in filesFromFolderOne)
@@ -36,10 +30,27 @@ public class ComparableFileComparer : IComparableFileComparer
             missingInFolderTwo.Add(new ComparedFileResult
             {
                 Path = fileOne.Path,
+                Source = folderOne,
                 Result = CompareResult.Missing
             });
         }
+        results.AddRange(missingInFolderTwo);
 
-        return missingInFolderTwo;
+        var missingInFolderOne = new List<ComparedFileResult>();
+
+        foreach (var fileTwo in filesFromFolderTwo)
+        {
+            if (filesFromFolderOne.Any(x => x.Hash == fileTwo.Hash)) continue;
+
+            missingInFolderOne.Add(new ComparedFileResult
+            {
+                Path = fileTwo.Path,
+                Source = folderTwo,
+                Result = CompareResult.Missing
+            });
+        }
+        results.AddRange(missingInFolderOne);
+
+        return results;
     }
 }

@@ -73,7 +73,6 @@ public class ComparableFileRepository : IComparableFileRepository
 
         file.Hash = ComputeHash(fileContent);
         file.Path = path;
-        file.DateOfChange = _fileSystem.File.GetLastWriteTime(path);
 
         return file;
     }
