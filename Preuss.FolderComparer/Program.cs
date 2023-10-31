@@ -10,9 +10,10 @@ using Preuss.FolderComparer.Comparer.Extensions;
 var builder = Host.CreateDefaultBuilder()
     .ConfigureServices(services =>
     {
-        services.AddSingleton<IArgumentsProcessor>(mv => new ArgumentsProcessor(args));
+        services.AddSingleton<IArgumentsProcessor>(_ => new ArgumentsProcessor(args));
         services.AddSingleton<IFileSystem, FileSystem>();
         services.SetupLogic();
+        services.SetupProcessors();
         services.SetupViews();
     }).Build();
 

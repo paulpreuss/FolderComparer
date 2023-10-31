@@ -1,0 +1,7 @@
+﻿namespace Preuss.FolderComparer.Abstractions.Processors;
+
+public interface IResultProcessor
+{
+    void WriteResultsToFile(string path);
+}
+
