@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System.IO.Abstractions;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Preuss.FolderComparer.Abstractions.Processors;
 using Preuss.FolderComparer.Extensions;
@@ -9,6 +10,7 @@ var builder = Host.CreateDefaultBuilder()
     .ConfigureServices(services =>
     {
         services.AddSingleton<IArgumentsProcessor>(mv => new ArgumentsProcessor(args));
+        services.AddSingleton<IFileSystem, FileSystem>();
         services.SetupViews();
     }).Build();
 

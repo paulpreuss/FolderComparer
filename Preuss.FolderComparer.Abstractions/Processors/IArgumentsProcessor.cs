@@ -2,7 +2,5 @@
 
 public interface IArgumentsProcessor
 {
-    bool ProvidedTwoFolders();
-    string GetFirstFolder();
-    string GetSecondFolder();
+    string[] GetArgs();
 }

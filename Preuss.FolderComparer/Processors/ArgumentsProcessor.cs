@@ -11,19 +11,9 @@ public class ArgumentsProcessor : IArgumentsProcessor
 		_args = args;
 	}
 
-    public bool ProvidedTwoFolders()
-    {
-        return _args.Length == 2;
-    }
-
-    public string GetFirstFolder()
-    {
-        throw new NotImplementedException();
-    }
-
-    public string GetSecondFolder()
-    {
-        throw new NotImplementedException();
-    }
+    public string[] GetArgs()
+	{
+		return _args;
+	}
 }
 

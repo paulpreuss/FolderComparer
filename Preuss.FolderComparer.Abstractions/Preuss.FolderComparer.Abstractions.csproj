@@ -2,4 +2,13 @@
   <PropertyGroup>
     <PackageId>Preuss.FolderComparer.Abstractions</PackageId>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="DataClasses\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataClasses\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" />
+  </ItemGroup>
 </Project>
