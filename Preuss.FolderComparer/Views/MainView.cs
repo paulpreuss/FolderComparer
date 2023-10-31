@@ -30,47 +30,19 @@ public class MainView
 		{
 			if (!string.IsNullOrEmpty(o.Source) && !string.IsNullOrEmpty(o.Analogy))
 			{
-                Compare(o.Source, o.Analogy);
-            }
-            else
-            {
-
-                ReadFolders();
+                Compare(o.Path, o.Source, o.Analogy);
             }
         });
 	}
 
-	private void ReadFolders()
-	{
-        string? source;
-        do
-        {
-            Console.WriteLine("Please enter the path of the first folder.");
-            source = Console.ReadLine();
-            if (!_fileSystem.Directory.Exists(source)) Console.WriteLine("The entered folder does not exist.");
-        }
-        while (!_fileSystem.Directory.Exists(source));
-
-        string? analogy;
-        do
-        {
-            Console.WriteLine("Please enter the path of the second folder.");
-            analogy = Console.ReadLine();
-            if (!_fileSystem.Directory.Exists(analogy)) Console.WriteLine("The entered folder does not exist.");
-        }
-        while (!_fileSystem.Directory.Exists(analogy));
-
-        Compare(source, analogy);
-    }
-
-	private void Compare(string source, string analogy)
+	private void Compare(string path, string source, string analogy)
 	{
         if (_fileSystem.Directory.Exists(source)
             && _fileSystem.Directory.Exists(analogy))
         {
             var results = _comparer.GetComparedFileResults(source, analogy);
 
-            _resultView.Print(source, analogy, results);
+            _resultView.Print(path, source, analogy, results);
         }
     }
 }
