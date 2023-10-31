@@ -21,35 +21,29 @@ public class ComparableFileComparer : IComparableFileComparer
 
         var results = new List<ComparedFileResult>();
 
-        var missingInFolderTwo = new List<ComparedFileResult>();
-
         foreach (var fileOne in filesFromFolderOne)
         {
             if (filesFromFolderTwo.Any(x => x.Hash == fileOne.Hash)) continue;
 
-            missingInFolderTwo.Add(new ComparedFileResult
+            results.Add(new ComparedFileResult
             {
                 Path = fileOne.Path,
                 Source = folderOne,
                 Result = CompareResult.Missing
             });
         }
-        results.AddRange(missingInFolderTwo);
-
-        var missingInFolderOne = new List<ComparedFileResult>();
 
         foreach (var fileTwo in filesFromFolderTwo)
         {
             if (filesFromFolderOne.Any(x => x.Hash == fileTwo.Hash)) continue;
 
-            missingInFolderOne.Add(new ComparedFileResult
+            results.Add(new ComparedFileResult
             {
                 Path = fileTwo.Path,
                 Source = folderTwo,
                 Result = CompareResult.Missing
             });
         }
-        results.AddRange(missingInFolderOne);
 
         return results;
     }

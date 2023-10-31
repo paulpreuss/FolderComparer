@@ -1,14 +1,24 @@
-﻿namespace Preuss.FolderComparer.Views;
+﻿using Preuss.FolderComparer.Comparer.Abstractions.DataClasses;
+
+namespace Preuss.FolderComparer.Views;
 
 public class ResultView
 {
-	public ResultView()
+	public void Print(IEnumerable<ComparedFileResult> results)
 	{
-	}
+		if (!results.Any())
+		{
+			Console.WriteLine("Folders are equal.");
+			Console.ReadKey();
+			return;
+		}
 
-	public void Print()
-	{
+		foreach (var result in results)
+		{
+			Console.WriteLine($"{result.Result}: {result.Path}");
+		}
 
-	}
+        Console.ReadKey();
+    }
 }
 

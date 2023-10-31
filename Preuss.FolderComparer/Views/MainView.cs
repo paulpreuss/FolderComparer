@@ -2,6 +2,7 @@
 using System.IO.Abstractions;
 using Preuss.FolderComparer.Abstractions.DataClasses;
 using Preuss.FolderComparer.Abstractions.Processors;
+using Preuss.FolderComparer.Comparer.Abstractions;
 
 namespace Preuss.FolderComparer.Views;
 
@@ -9,12 +10,15 @@ public class MainView
 {
 	private readonly IFileSystem _fileSystem;
 	private readonly IArgumentsProcessor _argumentsProcessor;
+    private readonly IComparableFileComparer _comparer;
 	private readonly ResultView _resultView;
 
-	public MainView(IFileSystem fileSystem, IArgumentsProcessor argumentsProcessor, ResultView resultView)
+	public MainView(IFileSystem fileSystem, IArgumentsProcessor argumentsProcessor,
+        IComparableFileComparer comparer, ResultView resultView)
 	{
 		_fileSystem = fileSystem;
 		_argumentsProcessor = argumentsProcessor;
+        _comparer = comparer;
 		_resultView = resultView;
     }
 
@@ -64,7 +68,9 @@ public class MainView
         if (_fileSystem.Directory.Exists(firstFolder)
             && _fileSystem.Directory.Exists(secondFolder))
         {
-            
+            var results = _comparer.GetComparedFileResults(firstFolder, secondFolder);
+
+            _resultView.Print(results);
         }
     }
 }
