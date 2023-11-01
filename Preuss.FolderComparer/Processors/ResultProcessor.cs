@@ -18,16 +18,16 @@ public class ResultProcessor : IResultProcessor
 		var missingInSource = GetMissingFilesForSource(analogy, results);
         var missingInAnalogy = GetMissingFilesForSource(source, results);
 
-        _fileSystem.File.AppendAllText(path, $"Following files are missing in {source}:");
+        _fileSystem.File.AppendAllText(path, $"Following files are missing in {source}:\n");
 		foreach (var file in missingInSource)
 		{
-			_fileSystem.File.AppendAllText(path, $"{file.Result}: {file.Path}");
+			_fileSystem.File.AppendAllText(path, $"{file.Result}: {file.Path}\n");
 		}
 
-        _fileSystem.File.AppendAllText(path, $"Following files are missing in {analogy}:");
+        _fileSystem.File.AppendAllText(path, $"\nFollowing files are missing in {analogy}:\n");
         foreach (var file in missingInAnalogy)
         {
-            _fileSystem.File.AppendAllText(path, $"{file.Result}: {file.Path}");
+            _fileSystem.File.AppendAllText(path, $"{file.Result}: {file.Path}\n");
         }
     }
 
