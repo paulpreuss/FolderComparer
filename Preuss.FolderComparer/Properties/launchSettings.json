@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Preuss.FolderComparer": {
+      "commandName": "Project",
+      "commandLineArgs": "-p C:\\Work\\result.txt -s C:\\Work\\Preuss.Management -a C:\\Work\\Preuss.TikTokShopListener"
+    }
+  }
+}
