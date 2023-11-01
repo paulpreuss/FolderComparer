@@ -6,8 +6,13 @@ using Preuss.FolderComparer.Extensions;
 using Preuss.FolderComparer.Processors;
 using Preuss.FolderComparer.Views;
 using Preuss.FolderComparer.Comparer.Extensions;
+using Microsoft.Extensions.Logging;
 
 var builder = Host.CreateDefaultBuilder()
+    .ConfigureLogging((context, logging) =>
+    {
+        logging.ClearProviders();
+    })
     .ConfigureServices(services =>
     {
         services.AddSingleton<IArgumentsProcessor>(_ => new ArgumentsProcessor(args));
