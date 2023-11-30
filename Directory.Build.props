@@ -7,7 +7,7 @@
         <Company>Preuss</Company>
         <PackageId>Preuss.FolderComparer.$(AssemblyName)</PackageId>
         <Product>Preuss.FolderComparer.$(AssemblyName)</Product>
-        <Version>1.0.0</Version>
+        <Version>1.0.1</Version>
     </PropertyGroup>
 
     <ItemGroup Condition="$(AssemblyName.EndsWith('.Tests'))">
