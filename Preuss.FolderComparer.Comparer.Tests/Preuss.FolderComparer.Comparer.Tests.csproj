@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <PackageId>Preuss.FolderComparer.Comparer.Tests</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IO.Abstractions.TestingHelpers" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Preuss.FolderComparer.Comparer.Abstractions\Preuss.FolderComparer.Comparer.Abstractions.csproj" />
+    <ProjectReference Include="..\Preuss.FolderComparer.Comparer\Preuss.FolderComparer.Comparer.csproj" />
+  </ItemGroup>
+
+</Project>

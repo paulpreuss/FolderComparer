@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageId>Preuss.FolderComparer.Abstractions</PackageId>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="DataClasses\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataClasses\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Preuss.FolderComparer.Comparer.Abstractions\Preuss.FolderComparer.Comparer.Abstractions.csproj" />
+  </ItemGroup>
+</Project>

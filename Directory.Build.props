@@ -1,0 +1,20 @@
+<Project>
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <Authors>Paul Preuss</Authors>
+        <Company>Preuss</Company>
+        <PackageId>Preuss.FolderComparer.$(AssemblyName)</PackageId>
+        <Product>Preuss.FolderComparer.$(AssemblyName)</Product>
+        <Version>1.0.0</Version>
+    </PropertyGroup>
+
+    <ItemGroup Condition="$(AssemblyName.EndsWith('.Tests'))">
+        <PackageReference Include="FluentAssertions"/>
+        <PackageReference Include="Microsoft.NET.Test.Sdk"/>
+        <PackageReference Include="NSubstitute"/>
+        <PackageReference Include="NUnit"/>
+		<PackageReference Include="NUnit3TestAdapter" />
+    </ItemGroup>
+</Project>
